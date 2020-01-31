@@ -117,13 +117,78 @@ guessing password(社会工程学等)
 
 ![1580466755987](C:\Users\liuxuechao\AppData\Roaming\Typora\typora-user-images\1580466755987.png)
 
+# 2.1学习内容
+
+## 数据集
+
+### 网络流量捕捉
+
+问题：数据量过少
+
+### 构造
+
+问题：数据质量存在问题，隐私问题
+
+但也有可用的质量较高的数据集
+
+## 评价分类模型检测性能
+
+### 混淆矩阵
+
+![1580481635337](C:\Users\liuxuechao\AppData\Roaming\Typora\typora-user-images\1580481635337.png)
+
+#### 准确率
+
+正常和攻击行为被检测概率
+
+(TP+TN)/ALL
+
+#### 精确率
+
+TP/（TP+FP)
+
+#### 召回率
+
+攻击行为被正确检测概率
+
+TP/(TP+FN)
+
+#### 误报率
+
+正常行为被错误的检测为异常攻击的比率
+
+FP/(TN+FP)
+
+## 循环神经网络
+
+结合上下文判断，记忆了T之前所有信息并作用于以后时刻，理论上学习任何时长
+
+
+
+<img src="C:\Users\liuxuechao\AppData\Roaming\Typora\typora-user-images\1580483706137.png" alt="1580483706137" style="zoom:50%;" />
 
 
 
 
 
+### 基于全连接循环神经网络的入侵检测系统（RNN-IDS)
 
+#### 数值化
 
+#### 归一化（0，1）
 
-### 
+#### 前向传播
 
+计算每一个样本输出并预测标签
+
+#### 权值微调（根据预测与实际差距）
+
+#### 检测分类（测试集）
+
+<img src="C:\Users\liuxuechao\AppData\Roaming\Typora\typora-user-images\1580484477553.png" alt="1580484477553" style="zoom:50%;" />
+
+#### 前向传播算法
+
+![1580484814632](C:\Users\liuxuechao\AppData\Roaming\Typora\typora-user-images\1580484814632.png)
+
+#### 权值微调算法
