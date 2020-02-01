@@ -23,6 +23,8 @@
 
 keras框架更加注重深度学习模型构建，提供了便利的API接口，简单堆积即可实现
 
+#### tf1.0运行结果
+
 ```python
 
 (base) C:\Users\liuxuechao>activate tensorflow
@@ -156,3 +158,192 @@ Epoch 10/10
 >>>
 ```
 
+#### tf2.0运行结果
+
+```python
+
+(base) C:\Users\liuxuechao>activate tensorflow2.0
+
+(tensorflow2.0) C:\Users\liuxuechao>python
+Python 3.7.6 (default, Jan  8 2020, 20:23:39) [MSC v.1916 64 bit (AMD64)] :: Anaconda, Inc. on win32
+Type "help", "copyright", "credits" or "license" for more information.
+>>> import tensorflow as a
+2020-02-01 21:53:04.841726: W tensorflow/stream_executor/platform/default/dso_loader.cc:55] Could not load dynamic library 'cudart64_101.dll'; dlerror: cudart64_101.dll not found
+2020-02-01 21:53:04.845849: I tensorflow/stream_executor/cuda/cudart_stub.cc:29] Ignore above cudart dlerror if you do not have a GPU set up on your machine.
+>>> a=3
+>>> w=a.Variable([[0.5,1.0]])
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+AttributeError: 'int' object has no attribute 'Variable'
+>>> exit()
+
+(tensorflow2.0) C:\Users\liuxuechao>python
+Python 3.7.6 (default, Jan  8 2020, 20:23:39) [MSC v.1916 64 bit (AMD64)] :: Anaconda, Inc. on win32
+Type "help", "copyright", "credits" or "license" for more information.
+>>> import tensorflow as tf
+2020-02-01 21:56:33.716915: W tensorflow/stream_executor/platform/default/dso_loader.cc:55] Could not load dynamic library 'cudart64_101.dll'; dlerror: cudart64_101.dll not found
+2020-02-01 21:56:33.720778: I tensorflow/stream_executor/cuda/cudart_stub.cc:29] Ignore above cudart dlerror if you do not have a GPU set up on your machine.
+>>> a=3
+>>> w=tf.Variable([[0.5,1.0]])
+2020-02-01 21:56:50.770829: W tensorflow/stream_executor/platform/default/dso_loader.cc:55] Could not load dynamic library 'nvcuda.dll'; dlerror: nvcuda.dll not found
+2020-02-01 21:56:50.776085: E tensorflow/stream_executor/cuda/cuda_driver.cc:351] failed call to cuInit: UNKNOWN ERROR (303)
+2020-02-01 21:56:50.784561: I tensorflow/stream_executor/cuda/cuda_diagnostics.cc:169] retrieving CUDA diagnostic information for host: DESKTOP-30VSF9G
+2020-02-01 21:56:50.789084: I tensorflow/stream_executor/cuda/cuda_diagnostics.cc:176] hostname: DESKTOP-30VSF9G
+2020-02-01 21:56:50.794362: I tensorflow/core/platform/cpu_feature_guard.cc:142] Your CPU supports instructions that this TensorFlow binary was not compiled to use: AVX2
+>>> x=tf.Variable([[2.0],[1.0]])
+>>> y=tf.matmul(w,x)
+>>> init_op=tf.global_variables_initializer()
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+AttributeError: module 'tensorflow' has no attribute 'global_variables_initializer'
+>>> exit()
+
+(tensorflow2.0) C:\Users\liuxuechao>python -c "import tensorflow as tf;print(tf.reduce_sum(tf.random.normal([1000, 1000])))"
+2020-02-01 22:00:28.463462: W tensorflow/stream_executor/platform/default/dso_loader.cc:55] Could not load dynamic library 'cudart64_101.dll'; dlerror: cudart64_101.dll not found
+2020-02-01 22:00:28.468114: I tensorflow/stream_executor/cuda/cudart_stub.cc:29] Ignore above cudart dlerror if you do not have a GPU set up on your machine.
+2020-02-01 22:00:30.902134: W tensorflow/stream_executor/platform/default/dso_loader.cc:55] Could not load dynamic library 'nvcuda.dll'; dlerror: nvcuda.dll not found
+2020-02-01 22:00:30.907287: E tensorflow/stream_executor/cuda/cuda_driver.cc:351] failed call to cuInit: UNKNOWN ERROR (303)
+2020-02-01 22:00:30.917180: I tensorflow/stream_executor/cuda/cuda_diagnostics.cc:169] retrieving CUDA diagnostic information for host: DESKTOP-30VSF9G
+2020-02-01 22:00:30.921140: I tensorflow/stream_executor/cuda/cuda_diagnostics.cc:176] hostname: DESKTOP-30VSF9G
+2020-02-01 22:00:30.923685: I tensorflow/core/platform/cpu_feature_guard.cc:142] Your CPU supports instructions that this TensorFlow binary was not compiled to use: AVX2
+tf.Tensor(1303.781, shape=(), dtype=float32)
+
+(tensorflow2.0) C:\Users\liuxuechao>python
+Python 3.7.6 (default, Jan  8 2020, 20:23:39) [MSC v.1916 64 bit (AMD64)] :: Anaconda, Inc. on win32
+Type "help", "copyright", "credits" or "license" for more information.
+>>> import tensorflow as tf
+2020-02-01 22:01:49.913307: W tensorflow/stream_executor/platform/default/dso_loader.cc:55] Could not load dynamic library 'cudart64_101.dll'; dlerror: cudart64_101.dll not found
+2020-02-01 22:01:49.918716: I tensorflow/stream_executor/cuda/cudart_stub.cc:29] Ignore above cudart dlerror if you do not have a GPU set up on your machine.
+>>> from tensorflow.keras import layers
+>>> print(tf.__version__)
+2.1.0
+>>> print(tf.keras.__version__)
+2.2.4-tf
+>>> model = tf.keras.Sequential()
+>>> model.add(layers.Dense(32, activation='relu'))
+>>> model.add(layers.Dense(32, activation='relu'))
+>>> model.add(layers.Dense(10, activation='softmax'))
+>>> layers.Dense(32, activation='sigmoid')
+<tensorflow.python.keras.layers.core.Dense object at 0x00000276EDD6F0C8>
+>>>  layers.Dense(32, activation=tf.sigmoid)
+  File "<stdin>", line 1
+    layers.Dense(32, activation=tf.sigmoid)
+    ^
+IndentationError: unexpected indent
+>>> layers.Dense(32, activation=tf.sigmoid)
+<tensorflow.python.keras.layers.core.Dense object at 0x00000276EDD43EC8>
+>>> layers.Dense(32, kernel_initializer='orthogonal')
+<tensorflow.python.keras.layers.core.Dense object at 0x00000276EDD6FEC8>
+>>> layers.Dense(32, kernel_initializer=tf.keras.initializers.glorot_normal)
+<tensorflow.python.keras.layers.core.Dense object at 0x00000276EDD43EC8>
+>>> layers.Dense(32, kernel_regularizer=tf.keras.regularizers.l2(0.01))
+<tensorflow.python.keras.layers.core.Dense object at 0x00000276EDD6FEC8>
+>>> layers.Dense(32, kernel_regularizer=tf.keras.regularizers.l1(0.01))
+<tensorflow.python.keras.layers.core.Dense object at 0x00000276EDD6FFC8>
+>>> model = tf.keras.Sequential()
+>>> model.add(layers.Dense(32, activation='relu'))
+>>> model.add(layers.Dense(32, activation='relu'))
+>>> model.add(layers.Dense(10, activation='softmax'))
+>>> model.compile(optimizer=tf.keras.optimizers.Adam(0.001),
+...
+KeyboardInterrupt
+>>>  model.compile(optimizer=tf.keras.optimizers.Adam(0.001),
+  File "<stdin>", line 1
+    model.compile(optimizer=tf.keras.optimizers.Adam(0.001),
+    ^
+IndentationError: unexpected indent
+>>> model.compile(optimizer=tf.keras.optimizers.Adam(0.001),
+... loss=tf.keras.losses.categorical_crossentropy,
+...               metrics=[tf.keras.metrics.categorical_accuracy])
+>>> import numpy as np
+>>> train_x = np.random.random((1000, 72))
+>>> train_y = np.random.random((1000, 10))
+>>> val_x = np.random.random((200, 72))
+>>> val_y = np.random.random((200, 10))
+>>> model.fit(train_x, train_y, epochs=10, batch_size=100,
+...            validation_data=(val_x, val_y))
+2020-02-01 22:08:54.750753: W tensorflow/stream_executor/platform/default/dso_loader.cc:55] Could not load dynamic library 'nvcuda.dll'; dlerror: nvcuda.dll not found
+2020-02-01 22:08:54.756184: E tensorflow/stream_executor/cuda/cuda_driver.cc:351] failed call to cuInit: UNKNOWN ERROR (303)
+2020-02-01 22:08:54.765903: I tensorflow/stream_executor/cuda/cuda_diagnostics.cc:169] retrieving CUDA diagnostic information for host: DESKTOP-30VSF9G
+2020-02-01 22:08:54.770802: I tensorflow/stream_executor/cuda/cuda_diagnostics.cc:176] hostname: DESKTOP-30VSF9G
+2020-02-01 22:08:54.778288: I tensorflow/core/platform/cpu_feature_guard.cc:142] Your CPU supports instructions that this TensorFlow binary was not compiled to use: AVX2
+Train on 1000 samples, validate on 200 samples
+Epoch 1/10
+1000/1000 [==============================] - 0s 425us/sample - loss: 11.8297 - categorical_accuracy: 0.0920 - val_loss: 11.9879 - val_categorical_accuracy: 0.1050
+Epoch 2/10
+1000/1000 [==============================] - 0s 20us/sample - loss: 11.9880 - categorical_accuracy: 0.0940 - val_loss: 12.2945 - val_categorical_accuracy: 0.1000
+Epoch 3/10
+1000/1000 [==============================] - 0s 21us/sample - loss: 12.4026 - categorical_accuracy: 0.0870 - val_loss: 12.8994 - val_categorical_accuracy: 0.1100
+Epoch 4/10
+1000/1000 [==============================] - 0s 23us/sample - loss: 13.1244 - categorical_accuracy: 0.0880 - val_loss: 13.8565 - val_categorical_accuracy: 0.1200
+Epoch 5/10
+1000/1000 [==============================] - 0s 21us/sample - loss: 14.3370 - categorical_accuracy: 0.0820 - val_loss: 15.4769 - val_categorical_accuracy: 0.1150
+Epoch 6/10
+1000/1000 [==============================] - 0s 21us/sample - loss: 16.3155 - categorical_accuracy: 0.0840 - val_loss: 17.9826 - val_categorical_accuracy: 0.1200
+Epoch 7/10
+1000/1000 [==============================] - 0s 21us/sample - loss: 19.1181 - categorical_accuracy: 0.0920 - val_loss: 21.3029 - val_categorical_accuracy: 0.1200
+Epoch 8/10
+1000/1000 [==============================] - 0s 19us/sample - loss: 22.7502 - categorical_accuracy: 0.0900 - val_loss: 25.6009 - val_categorical_accuracy: 0.1000
+Epoch 9/10
+1000/1000 [==============================] - 0s 23us/sample - loss: 27.5551 - categorical_accuracy: 0.0950 - val_loss: 31.1916 - val_categorical_accuracy: 0.1100
+Epoch 10/10
+1000/1000 [==============================] - 0s 20us/sample - loss: 33.3495 - categorical_accuracy: 0.0880 - val_loss: 37.4008 - val_categorical_accuracy: 0.1150
+<tensorflow.python.keras.callbacks.History object at 0x00000276EEE60348>
+>>> dataset = tf.data.Dataset.from_tensor_slices((train_x, train_y))
+>>> dataset = dataset.batch(32)
+>>> dataset = dataset.repeat()
+>>> val_dataset = tf.data.Dataset.from_tensor_slices((val_x, val_y))
+>>> val_dataset = val_dataset.batch(32)
+>>> val_dataset = val_dataset.repeat()
+>>> model.fit(dataset, epochs=10, steps_per_epoch=30,
+...            validation_data=val_dataset,
+...            validation_data=val_dataset, validation_steps=3)
+  File "<stdin>", line 3
+SyntaxError: keyword argument repeated
+>>> model.fit(dataset, epochs=10, steps_per_epoch=30,
+...            validation_data=val_dataset, validation_steps=3)
+Train for 30 steps, validate for 3 steps
+Epoch 1/10
+30/30 [==============================] - 0s 8ms/step - loss: 47.8062 - categorical_accuracy: 0.0833 - val_loss: 62.9789 - val_categorical_accuracy: 0.1146
+Epoch 2/10
+30/30 [==============================] - 0s 2ms/step - loss: 75.9359 - categorical_accuracy: 0.0929 - val_loss: 96.5823 - val_categorical_accuracy: 0.1042
+Epoch 3/10
+30/30 [==============================] - 0s 2ms/step - loss: 110.9199 - categorical_accuracy: 0.0919 - val_loss: 132.9336 - val_categorical_accuracy: 0.1146
+Epoch 4/10
+30/30 [==============================] - 0s 2ms/step - loss: 145.5147 - categorical_accuracy: 0.0962 - val_loss: 169.6907 - val_categorical_accuracy: 0.1042
+Epoch 5/10
+30/30 [==============================] - 0s 1ms/step - loss: 180.9468 - categorical_accuracy: 0.1026 - val_loss: 204.7337 - val_categorical_accuracy: 0.1146
+Epoch 6/10
+30/30 [==============================] - 0s 2ms/step - loss: 213.9926 - categorical_accuracy: 0.0876 - val_loss: 238.1935 - val_categorical_accuracy: 0.0938
+Epoch 7/10
+30/30 [==============================] - 0s 2ms/step - loss: 241.0229 - categorical_accuracy: 0.0962 - val_loss: 265.0216 - val_categorical_accuracy: 0.1146
+Epoch 8/10
+30/30 [==============================] - 0s 2ms/step - loss: 259.1919 - categorical_accuracy: 0.0940 - val_loss: 275.2800 - val_categorical_accuracy: 0.1042
+Epoch 9/10
+30/30 [==============================] - 0s 2ms/step - loss: 255.9588 - categorical_accuracy: 0.1058 - val_loss: 260.6051 - val_categorical_accuracy: 0.1146
+Epoch 10/10
+30/30 [==============================] - 0s 2ms/step - loss: 231.3891 - categorical_accuracy: 0.1004 - val_loss: 233.5428 - val_categorical_accuracy: 0.0938
+<tensorflow.python.keras.callbacks.History object at 0x00000276EEE60A88>
+>>> test_x = np.random.random((1000, 72))
+>>> test_y = np.random.random((1000, 10))
+>>> model.evaluate(test_x, test_y, batch_size=32)
+1000/1000 [==============================] - 0s 87us/sample - loss: 217.4756 - categorical_accuracy: 0.1070
+[217.47558471679687, 0.107]
+>>> test_data = tf.data.Dataset.from_tensor_slices((test_x, test_y))
+>>> test_data = test_data.batch(32).repeat()
+>>> model.evaluate(test_data, steps=30)
+30/30 [==============================] - 0s 830us/step - loss: 217.5327 - categorical_accuracy: 0.1083
+[217.53268330891927, 0.108333334]
+>>> result = model.predict(test_x, batch_size=32)
+>>> print(result)
+[[0.         0.09408058 0.18456095 ... 0.00312631 0.0528776  0.5596742 ]
+ [0.         0.07900902 0.16783477 ... 0.00502137 0.08891902 0.5420419 ]
+ [0.         0.12148204 0.29399288 ... 0.00643831 0.1307136  0.32100162]
+ ...
+ [0.         0.0841686  0.24969104 ... 0.00718069 0.08367687 0.44839454]
+ [0.         0.06567922 0.3431278  ... 0.00341688 0.10024671 0.41551104]
+ [0.         0.05106765 0.16744436 ... 0.00483427 0.0938361  0.5832979 ]]
+>>>
+```
+
+可见运行结果略有差异
