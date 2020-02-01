@@ -78,4 +78,23 @@ os.environ['TF_CPP_MIN_LOG_LEVEL'] = '2'
 
 2.编译tensorflow源代码
 
-​           
+# 2.2更新
+
+## problem
+
+## tensorflow2.1.0安装问题
+
+<img src="C:\Users\liuxuechao\AppData\Roaming\Typora\typora-user-images\1580567463151.png" alt="1580567463151" style="zoom:50%;" />
+
+持续报错：dll load failed :找不到指定的模块
+
+#### 检查过程：
+
+1.检查了pillow，无效
+
+2.检查了anaconda 环境变量
+
+3.尝试重装tensorflow
+
+4.重新阅读安装指导文档，发现msvcp140_1.dll文档缺失，问题解决
+
