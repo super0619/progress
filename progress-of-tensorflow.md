@@ -349,3 +349,28 @@ Epoch 10/10
 ```
 
 可见运行结果略有差异
+
+## tf2.0学习笔记
+
+##### autoencoder
+
+图像 NNencoder  vector NNdecoder (映射)得到矩阵（图片）
+
+MSE（均方误差）存在与人脑接受度不同处
+
+### DCGAN(深度卷积生成对抗网络)
+
+
+
+#### generator
+
+##### 应用
+
+图像/文档产生
+
+视频预测
+
+图像精度转换
+
+#### discriminator
+
