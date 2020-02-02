@@ -350,7 +350,7 @@ Epoch 10/10
 
 可见运行结果略有差异
 
-## tf2.0学习笔记
+## 2.3学习tf2.0学习笔记
 
 ##### autoencoder
 
@@ -360,7 +360,67 @@ MSE（均方误差）存在与人脑接受度不同处
 
 ### DCGAN(深度卷积生成对抗网络)
 
+最大似然
 
+![1580649077464](C:\Users\liuxuechao\AppData\Roaming\Typora\typora-user-images\1580649077464.png)
+
+![](C:\Users\liuxuechao\AppData\Roaming\Typora\typora-user-images\1580649338658.pn
+
+![1580649609828](C:\Users\liuxuechao\AppData\Roaming\Typora\typora-user-images\1580649609828.png)
+
+
+
+KL散度，评估两个分布之间的差异度有多高
+
+![1580650609624](C:\Users\liuxuechao\AppData\Roaming\Typora\typora-user-images\1580650609624.png)
+
+#### 训练方法的数学化
+
+同时训练
+
+为D找最高点
+
+为G找最高点中的最低点
+
+![1580652398381](C:\Users\liuxuechao\AppData\Roaming\Typora\typora-user-images\1580652398381.png)
+
+![1580654273846](C:\Users\liuxuechao\AppData\Roaming\Typora\typora-user-images\1580654273846.png)
+
+![1580654403597](C:\Users\liuxuechao\AppData\Roaming\Typora\typora-user-images\1580654403597.png)
+
+![1580654681464](C:\Users\liuxuechao\AppData\Roaming\Typora\typora-user-images\1580654681464.png)
+
+![1580654878074](C:\Users\liuxuechao\AppData\Roaming\Typora\typora-user-images\1580654878074.png)
+
+![1580655744119](C:\Users\liuxuechao\AppData\Roaming\Typora\typora-user-images\1580655744119.png)
+
+##### V
+
+分辨能力，将V调整大，就是将损失函数调小
+
+##### 优化
+
+![1580656304963](C:\Users\liuxuechao\AppData\Roaming\Typora\typora-user-images\1580656304963.png)
+
+#### 评估标准
+
+discrimination不可直接通过loss判断，依赖于generator情况
+
+![1580656804569](C:\Users\liuxuechao\AppData\Roaming\Typora\typora-user-images\1580656804569.png)
+
+催生了多版本的Gan
+
+##### 图片模糊
+
+由于MSE取了多张图片的Min为了取到均值最小
+
+##### 问题
+
+generator更倾向于走向自己有利的方面，不能反映真实世界的多态
+
+### conditional GAN
+
+![1580657650622](C:\Users\liuxuechao\AppData\Roaming\Typora\typora-user-images\1580657650622.png)
 
 #### generator
 
