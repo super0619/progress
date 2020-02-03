@@ -350,7 +350,23 @@ Epoch 10/10
 
 可见运行结果略有差异
 
-## 2.3学习tf2.0学习笔记
+# 2.3学习tf2.0学习笔记
+
+## NN
+
+在特定问题下巧妙地建立x与Y的函数对应关系
+
+### RELU线性整流函数
+
+RELU可以作为单一神经元
+
+神经元组成神经网络
+
+![1580721224585](C:\Users\liuxuechao\AppData\Roaming\Typora\typora-user-images\1580721224585.png)
+
+## supervised learning
+
+NN在特定问题下巧妙地建立x与Y的函数对应关系，并且通过supervised learning 拟合数据
 
 ##### autoencoder
 
