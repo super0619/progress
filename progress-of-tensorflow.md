@@ -424,6 +424,8 @@ generator更倾向于走向自己有利的方面，不能反映真实世界的�
 
 #### generator
 
+![1580699806226](C:\Users\liuxuechao\AppData\Roaming\Typora\typora-user-images\1580699806226.png)
+
 ##### 应用
 
 图像/文档产生
@@ -433,4 +435,6 @@ generator更倾向于走向自己有利的方面，不能反映真实世界的�
 图像精度转换
 
 #### discriminator
+
+![1580699777831](C:\Users\liuxuechao\AppData\Roaming\Typora\typora-user-images\1580699777831.png)
 
