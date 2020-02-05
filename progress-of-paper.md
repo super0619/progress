@@ -230,3 +230,49 @@ D(G(z))=0.5
 聚类，数据挖掘，用于在大量无标签数据中发现些什么
 
 选择合适的分类标准对结果很重要
+
+# 2.5学习笔记
+
+## 僵尸网络检测技术
+
+### LSTM
+
+把信息有效整合和筛选，具备了记住长期信息的能力
+
+### 基于LSTM的僵尸网络检测技术
+
+数值化
+
+归一化
+
+提取特征
+
+![1580873046840](C:\Users\liuxuechao\AppData\Roaming\Typora\typora-user-images\1580873046840.png)
+
+![1580873066587](C:\Users\liuxuechao\AppData\Roaming\Typora\typora-user-images\1580873066587.png)
+
+### 基于生成式对抗网络的僵尸网络监测技术
+
+### bot-GAN
+
+更加注重检测模型而不是生成模型
+
+#### 生成式对抗网络变体 
+
+![1580873556170](C:\Users\liuxuechao\AppData\Roaming\Typora\typora-user-images\1580873556170.png)
+
+
+
+#### bot-gan模型
+
+![1580873690463](C:\Users\liuxuechao\AppData\Roaming\Typora\typora-user-images\1580873690463.png)
+
+##### 训练
+
+先验训练分类
+
+## 总结发展
+
+1.云计算的结合，高性能计算环境中实时监测能力
+
+2.调参
