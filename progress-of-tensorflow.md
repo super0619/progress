@@ -454,3 +454,24 @@ generator更倾向于走向自己有利的方面，不能反映真实世界的�
 
 ![1580699777831](C:\Users\liuxuechao\AppData\Roaming\Typora\typora-user-images\1580699777831.png)
 
+# 2.6
+
+## 二分分类
+
+### 图像数字化
+
+像素点，三个矩阵
+
+![1580893198585](C:\Users\liuxuechao\AppData\Roaming\Typora\typora-user-images\1580893198585.png)
+
+### 输入输出
+
+![1580893222868](C:\Users\liuxuechao\AppData\Roaming\Typora\typora-user-images\1580893222868.png)
+
+## 逻辑回归
+
+### sigmoid function
+
+![1580908407847](C:\Users\liuxuechao\AppData\Roaming\Typora\typora-user-images\1580908407847.png)
+
+### b/偏置量
