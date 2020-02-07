@@ -468,10 +468,43 @@ generator更倾向于走向自己有利的方面，不能反映真实世界的�
 
 ![1580893222868](C:\Users\liuxuechao\AppData\Roaming\Typora\typora-user-images\1580893222868.png)
 
-## 逻辑回归
+## 逻辑回归(small NN)
 
 ### sigmoid function
 
 ![1580908407847](C:\Users\liuxuechao\AppData\Roaming\Typora\typora-user-images\1580908407847.png)
 
 ### b/偏置量
+
+### 优化逻辑回归的代价函数
+
+loss function=1/2(yhat-y)^2
+
+实际上L=-(ylogy*hat*+(1-y)log(1-y*hat*))  //界定模型对单一样本的训练效果
+
+cost function   //衡量w,b在模型中的效果
+
+![1580975947788](C:\Users\liuxuechao\AppData\Roaming\Typora\typora-user-images\1580975947788.png)
+
+### 梯度下降(gradient descent)
+
+以初始点开始，朝最陡的下坡方向走一步
+
+![1580976721407](C:\Users\liuxuechao\AppData\Roaming\Typora\typora-user-images\1580976721407.png)
+
+![1580977687232](C:\Users\liuxuechao\AppData\Roaming\Typora\typora-user-images\1580977687232.png)
+
+代码实现
+
+w=w-a*dw
+
+# 2.7
+
+## computation graph
+
+从左向右的计算
+
+### 导数
+
+链式
+
