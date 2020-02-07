@@ -276,3 +276,26 @@ D(G(z))=0.5
 1.云计算的结合，高性能计算环境中实时监测能力
 
 2.调参
+
+# 2.7
+
+### RvNN递归神经网络
+
+当一个图像被分成不同的感兴趣的部分时，一个句子被分成几个词。RvNN计算可能的一对的得分来合并它们并构建一个语法树。对于每对单位，RvNN计算合并的合理性得分。得分最高的一对组合成一个组合向量。每次合并后，RvNN将生成（1）多个单元的更大区域
+
+![1581067419988](C:\Users\liuxuechao\AppData\Roaming\Typora\typora-user-images\1581067419988.png)
+
+![1581067841315](C:\Users\liuxuechao\AppData\Roaming\Typora\typora-user-images\1581067841315.png)
+
+LSTM解决了前序过多造成的梯度消失
+
+![1581067855913](C:\Users\liuxuechao\AppData\Roaming\Typora\typora-user-images\1581067855913.png)
+
+attention 机制
+
+![1581068012669](C:\Users\liuxuechao\AppData\Roaming\Typora\typora-user-images\1581068012669.png)
+
+### RNN(递归神经网络)
+
+
+
