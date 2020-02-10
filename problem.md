@@ -98,3 +98,13 @@ os.environ['TF_CPP_MIN_LOG_LEVEL'] = '2'
 
 4.重新阅读安装指导文档，发现msvcp140_1.dll文档缺失，问题解决
 
+ deb ![img](file:///C:\Users\liuxuechao\AppData\Local\Temp\%W@GJ$ACOF(TYDYECOKVDYB.png)http://mirrors.aliyun.com/ubuntu/ bionic main restricted universe multiverse
+deb ![img](file:///C:\Users\liuxuechao\AppData\Local\Temp\%W@GJ$ACOF(TYDYECOKVDYB.png)http://mirrors.aliyun.com/ubuntu/ bionic-security main restricted universe multiverse
+deb ![img](file:///C:\Users\liuxuechao\AppData\Local\Temp\%W@GJ$ACOF(TYDYECOKVDYB.png)http://mirrors.aliyun.com/ubuntu/ bionic-updates main restricted universe multiverse
+deb ![img](file:///C:\Users\liuxuechao\AppData\Local\Temp\%W@GJ$ACOF(TYDYECOKVDYB.png)http://mirrors.aliyun.com/ubuntu/ bionic-proposed main restricted universe multiverse
+deb ![img](file:///C:\Users\liuxuechao\AppData\Local\Temp\%W@GJ$ACOF(TYDYECOKVDYB.png)http://mirrors.aliyun.com/ubuntu/ bionic-backports main restricted universe multiverse
+deb-src ![img](file:///C:\Users\liuxuechao\AppData\Local\Temp\%W@GJ$ACOF(TYDYECOKVDYB.png)http://mirrors.aliyun.com/ubuntu/ bionic main restricted universe multiverse
+deb-src ![img](file:///C:\Users\liuxuechao\AppData\Local\Temp\%W@GJ$ACOF(TYDYECOKVDYB.png)http://mirrors.aliyun.com/ubuntu/ bionic-security main restricted universe multiverse
+deb-src ![img](file:///C:\Users\liuxuechao\AppData\Local\Temp\%W@GJ$ACOF(TYDYECOKVDYB.png)http://mirrors.aliyun.com/ubuntu/ bionic-updates main restricted universe multiverse
+deb-src ![img](file:///C:\Users\liuxuechao\AppData\Local\Temp\%W@GJ$ACOF(TYDYECOKVDYB.png)http://mirrors.aliyun.com/ubuntu/ bionic-proposed main restricted universe multiverse
+deb-src ![img](file:///C:\Users\liuxuechao\AppData\Local\Temp\%W@GJ$ACOF(TYDYECOKVDYB.png)http://mirrors.aliyun.com/ubuntu/ bionic-backports main restricted universe multiverse
