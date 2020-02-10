@@ -508,3 +508,29 @@ w=w-a*dw
 
 链式
 
+# 2.9-2.10
+
+反向传播的最后一步
+
+是利用微积分的知识，算出你需要改变w,b多少
+
+![](C:\Users\liuxuechao\AppData\Roaming\Typora\typora-user-images\1581237837236.png)
+
+m examples
+
+![1581248395742](C:\Users\liuxuechao\AppData\Roaming\Typora\typora-user-images\1581248395742.png)
+
+![1581248782610](C:\Users\liuxuechao\AppData\Roaming\Typora\typora-user-images\1581248782610.png)
+
+存在for循环降低效率的问题
+
+所以产生矢量化方法
+
+### 向量化/vectorization
+
+
+
+
+
+
+
