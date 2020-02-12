@@ -377,3 +377,57 @@ One main issue of an RNN is its sensitivity to the vanishing and exploding gradi
 
 通过根据候选答案与问题之间的相互依赖程度对候选答案进行排序
 
+###### 
+
+# 2.12
+
+### visual data processing/可视化数据处理
+
+#### image classification
+
+###### **过度拟合问题**
+
+泛化能力：对未知数据集有很好的拟合结果
+
+过度拟合：由于训练数量太大，对训练集外的数据不work
+
+解决：数据集增强，创建假的数据集
+
+控制模型复杂度
+
+L1/L2正则化，降低模型复杂度，
+
+<img src="C:\Users\liuxuechao\AppData\Roaming\Typora\typora-user-images\1581475036779.png" alt="1581475036779" style="zoom:25%;" />
+
+dropout
+
+在隐藏单元中增加噪声
+
+early stopping
+
+在验证集上发现如果测试误差上升，则停止训练
+
+###### 梯度消失问题
+
+由于反向传播训练法则/激活函数选择不好，靠近输入的层学习很慢，靠近输出的层学习效果较好
+
+解决：预训练+微调
+
+逐层训练，微调（应用不多）整体性缺失
+
+relu激活函数
+
+LSTM
+
+#### Object Detection and Semantic Segmentation/目标检测和语义分割
+
+#### video proccessing
+
+同时包含时空信息
+
+一种新的视频处理技术被称为递归卷积网络（RCNs）。它将CNNs应用于视频帧上进行视觉理解，然后将帧反馈给RNNs进行视频中的时间信息分析。
+
+传统的二维CNN相比，三维CNN（C3D）在视频分析任务上表现出了更好的性能。它从视频输入中自动学习时空特征，同时对图像的外观和运动进行建模。
+
+
+
