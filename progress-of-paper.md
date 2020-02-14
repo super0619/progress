@@ -435,9 +435,15 @@ LSTM
 
 ## 凸优化？
 
+https://www.zhihu.com/search?type=content&q=%E5%87%B8%E4%BC%98%E5%8C%96
+
+ 如果一组约束是线性等式约束，则它确定的可行域是一个凸集 
+
+ 如果一组约束是线性不等式约束，则它定义的可行域是凸集 
+
 支持向量机？
 
-线性分类
+线性分类get
 
 贝叶斯决策？
 
@@ -445,4 +451,8 @@ logisitc回归?
 
 无监督学习
 
-Kmeans？
+### Kmeans？
+
+![1581658656748](C:\Users\liuxuechao\AppData\Roaming\Typora\typora-user-images\1581658656748.png)
+
+![1581658702050](C:\Users\liuxuechao\AppData\Roaming\Typora\typora-user-images\1581658702050.png)
