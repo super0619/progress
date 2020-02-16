@@ -54,6 +54,26 @@
 
 ![1581766566294](C:\Users\liuxuechao\AppData\Roaming\Typora\typora-user-images\1581766566294.png)
 
+# 2.16
+
+## 基于聚类的检测方法
+
+常规聚类 协同聚类
+
+![1581778717911](C:\Users\liuxuechao\AppData\Roaming\Typora\typora-user-images\1581778717911.png)
+
+## *反向传播算法*
+
+![1581830484379](C:\Users\liuxuechao\AppData\Roaming\Typora\typora-user-images\1581830484379.png)
+
+训练时每次更新权重时偏导数求解问题
+
+反向传播算法
+
+![1581831671243](C:\Users\liuxuechao\AppData\Roaming\Typora\typora-user-images\1581831671243.png)
+
+![1581831711836](C:\Users\liuxuechao\AppData\Roaming\Typora\typora-user-images\1581831711836.png)
+
 
 
 ## CNN端到端加密流量分析
