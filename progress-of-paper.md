@@ -307,6 +307,10 @@ One main issue of an RNN is its sensitivity to the vanishing and exploding gradi
 
 ### CNN（卷积神经网络）
 
+#### 2.16补充
+
+
+
 对一小块像素区域的处理，使得神经网络可以看到图形，而非一个点
 
 ![1581131719434](C:\Users\liuxuechao\AppData\Roaming\Typora\typora-user-images\1581131719434.png)

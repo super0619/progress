@@ -8,7 +8,15 @@
 
 ![1581760674285](C:\Users\liuxuechao\AppData\Roaming\Typora\typora-user-images\1581760674285.png)
 
-![1581760782327](C:\Users\liuxuechao\AppData\Roaming\Typora\typora-user-images\1581760782327.png)
+![](C:\Users\liuxuechao\AppData\Roaming\Typora\typora-user-images\1581760782327.png)
+
+![1581832471306](C:\Users\liuxuechao\AppData\Roaming\Typora\typora-user-images\1581832471306.png)
+
+![1581832538121](C:\Users\liuxuechao\AppData\Roaming\Typora\typora-user-images\1581832538121.png)
+
+![1581832634982](C:\Users\liuxuechao\AppData\Roaming\Typora\typora-user-images\1581832634982.png)
+
+![1581833789434](C:\Users\liuxuechao\AppData\Roaming\Typora\typora-user-images\1581833789434.png)
 
 # 2.15
 
@@ -79,3 +87,28 @@
 ## CNN端到端加密流量分析
 
 ![1581756249448](C:\Users\liuxuechao\AppData\Roaming\Typora\typora-user-images\1581756249448.png)
+
+## 基于表征学习的分类
+
+![1581833774638](C:\Users\liuxuechao\AppData\Roaming\Typora\typora-user-images\1581833774638.png)
+
+#### 对流量数据进行单元划分
+
+包
+
+原始流量
+
+flow
+
+session
+
+选取flow或者session的前n个字节
+
+#### 协议层次
+
+#### 网络流量处理
+
+可视化
+
+![1581853383138](C:\Users\liuxuechao\AppData\Roaming\Typora\typora-user-images\1581853383138.png)
+
