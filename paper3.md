@@ -18,6 +18,12 @@
 
 ![1581833789434](C:\Users\liuxuechao\AppData\Roaming\Typora\typora-user-images\1581833789434.png)
 
+![1581854018936](C:\Users\liuxuechao\AppData\Roaming\Typora\typora-user-images\1581854018936.png)
+
+![1581854053853](C:\Users\liuxuechao\AppData\Roaming\Typora\typora-user-images\1581854053853.png)
+
+![1581855161676](C:\Users\liuxuechao\AppData\Roaming\Typora\typora-user-images\1581855161676.png)
+
 # 2.15
 
 ## 分类方法
