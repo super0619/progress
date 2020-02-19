@@ -24,6 +24,8 @@
 
 ![1581855161676](C:\Users\liuxuechao\AppData\Roaming\Typora\typora-user-images\1581855161676.png)
 
+![1582036176333](C:\Users\liuxuechao\AppData\Roaming\Typora\typora-user-images\1582036176333.png)
+
 # 2.15
 
 ## 分类方法
@@ -93,6 +95,8 @@
 ## CNN端到端加密流量分析
 
 ![1581756249448](C:\Users\liuxuechao\AppData\Roaming\Typora\typora-user-images\1581756249448.png)
+
+流量是一维的序列数据
 
 ## 基于表征学习的分类
 
