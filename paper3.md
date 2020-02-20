@@ -28,6 +28,10 @@
 
 ![1582189985543](C:\Users\liuxuechao\AppData\Roaming\Typora\typora-user-images\1582189985543.png)
 
+## GAN
+
+![1582193478642](C:\Users\liuxuechao\AppData\Roaming\Typora\typora-user-images\1582193478642.png)
+
 # 2.15
 
 ## 分类方法
@@ -153,3 +157,6 @@ K折交叉验证技术
 #### LSTM
 
 ![1582192640336](C:\Users\liuxuechao\AppData\Roaming\Typora\typora-user-images\1582192640336.png)
+
+#### t-SNE时空特征降维和可视化分析
+
