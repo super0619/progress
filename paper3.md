@@ -26,6 +26,8 @@
 
 ![1582036176333](C:\Users\liuxuechao\AppData\Roaming\Typora\typora-user-images\1582036176333.png)
 
+![1582189985543](C:\Users\liuxuechao\AppData\Roaming\Typora\typora-user-images\1582189985543.png)
+
 # 2.15
 
 ## 分类方法
@@ -122,3 +124,32 @@ session
 
 ![1581853383138](C:\Users\liuxuechao\AppData\Roaming\Typora\typora-user-images\1581853383138.png)
 
+# 2.19-2.10
+
+## 基于层次化时空特征学习的网络流量异常检测方法
+
+![1582127825682](C:\Users\liuxuechao\AppData\Roaming\Typora\typora-user-images\1582127825682.png)
+
+表征学习方法
+
+自动学习原始数据特征的方法
+
+![1582190067588](C:\Users\liuxuechao\AppData\Roaming\Typora\typora-user-images\1582190067588.png)
+
+### CNN+LSTM
+
+#### 数据处理
+
+![1582190301188](C:\Users\liuxuechao\AppData\Roaming\Typora\typora-user-images\1582190301188.png)
+
+K折交叉验证技术
+
+![1582190746886](C:\Users\liuxuechao\AppData\Roaming\Typora\typora-user-images\1582190746886.png)
+
+#### CNN
+
+![1582191927991](C:\Users\liuxuechao\AppData\Roaming\Typora\typora-user-images\1582191927991.png)
+
+#### LSTM
+
+![1582192640336](C:\Users\liuxuechao\AppData\Roaming\Typora\typora-user-images\1582192640336.png)
