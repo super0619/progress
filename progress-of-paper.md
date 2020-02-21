@@ -203,6 +203,22 @@ D(G(z))=0.5
 
 固定其中一个模型，修改另一个模型的参数，使得固定模型的错误最大化，博弈过程
 
+### 存在问题
+
+过拟合，梯度下降
+
+衍生框架
+
+![1582278646429](C:\Users\liuxuechao\AppData\Roaming\Typora\typora-user-images\1582278646429.png)
+
+### 预训练
+
+![1582278782994](C:\Users\liuxuechao\AppData\Roaming\Typora\typora-user-images\1582278782994.png)
+
+### 崩溃模式现象
+
+![1582278950515](C:\Users\liuxuechao\AppData\Roaming\Typora\typora-user-images\1582278950515.png)
+
 ### 有监督学习的生成式对抗网络的入侵检测框架（ID-GAN)
 
 <img src="C:\Users\liuxuechao\AppData\Roaming\Typora\typora-user-images\1580526532576.png" alt="1580526532576" style="zoom: 50%;" />
