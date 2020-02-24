@@ -17,6 +17,41 @@
 
  第一个简单测试用例通过（其中存在CPU support问题 忽略/优化） 
 
+# 2.24框架函数研究
+
+```python
+from __future__ import absolute_import, division, print_function, unicode_literals
+import tensorflow as tf
+from tensorflow.keras import datasets, layers, models
+import matplotlib.pyplot as plt
+```
+
+```python
+from __future__ import absolute_import, division, print_function, unicode_literals
+```
+
+如果某个版本中出现了某个新的功能特性，而且这个特性和当前版本中使用的不兼容，也就是它在该版本中不是语言标准，那么我如果想要使用的话就需要从**future**模块导入。
+
+这样的做法的作用就是将新版本的特性引进当前版本中，也就是说我们可以在当前版本使用新版本的一些特性。
+
+```python
+from tensorflow.keras import datasets, layers, models
+```
+
+datasets 数据集函数，下载
+
+layers TensorFlow 中的 layers 模块提供用于深度学习的更高层次封装的 API，利用它我们可以轻松地构建模型
+
+https://cuiqingcai.com/5715.html
+
+![1582539598648](C:\Users\liuxuechao\AppData\Roaming\Typora\typora-user-images\1582539598648.png)
+
+```python
+matplotlib.pyplot 
+```
+
+
+
 # 2.1学习笔记
 
 ### 层堆叠模型试验 tf.keras.Sequential 模型 
