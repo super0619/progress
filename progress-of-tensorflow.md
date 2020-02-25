@@ -50,7 +50,7 @@ https://cuiqingcai.com/5715.html
 matplotlib.pyplot 
 ```
 
-
+每一个pyplot函数都使一副图像做出些许改变，例如创建一幅图，在图中创建一个绘图区域，在绘图区域中添加一条线等等。在matplotlib.pyplot中，各种状态通过函数调用保存起来，以便于可以随时跟踪像当前图像和绘图区域这样的东西。
 
 # 2.1学习笔记
 
