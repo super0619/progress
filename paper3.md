@@ -86,13 +86,23 @@
 
 ## *反向传播算法*
 
+# 2.26
+
+# https://www.jianshu.com/p/74bb815f612e
+
+loss对每一层的神经元的w,b求出导，然后更新w,b
+
+更新机理
+
+![1582705293536](C:\Users\liuxuechao\AppData\Roaming\Typora\typora-user-images\1582705293536.png)
+
 ![1581830484379](C:\Users\liuxuechao\AppData\Roaming\Typora\typora-user-images\1581830484379.png)
 
 训练时每次更新权重时偏导数求解问题
 
 反向传播算法
 
-![1581831671243](C:\Users\liuxuechao\AppData\Roaming\Typora\typora-user-images\1581831671243.png)
+<img src="C:\Users\liuxuechao\AppData\Roaming\Typora\typora-user-images\1581831671243.png" alt="1581831671243" style="zoom:50%;" />
 
 ![1581831711836](C:\Users\liuxuechao\AppData\Roaming\Typora\typora-user-images\1581831711836.png)
 

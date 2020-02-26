@@ -477,3 +477,179 @@ logisitc回归?
 
 ![1581658702050](C:\Users\liuxuechao\AppData\Roaming\Typora\typora-user-images\1581658702050.png)
 
+## NN
+
+在特定问题下巧妙地建立x与Y的函数对应关系
+
+### RELU线性整流函数
+
+RELU可以作为单一神经元
+
+神经元组成神经网络
+
+![1580721224585](C:\Users\liuxuechao\AppData\Roaming\Typora\typora-user-images\1580721224585.png)
+
+## supervised learning
+
+NN在特定问题下巧妙地建立x与Y的函数对应关系，并且通过supervised learning 拟合数据
+
+##### autoencoder
+
+图像 NNencoder  vector NNdecoder (映射)得到矩阵（图片）
+
+MSE（均方误差）存在与人脑接受度不同处
+
+### DCGAN(深度卷积生成对抗网络)
+
+最大似然
+
+![1580649077464](C:\Users\liuxuechao\AppData\Roaming\Typora\typora-user-images\1580649077464.png)
+
+![](C:\Users\liuxuechao\AppData\Roaming\Typora\typora-user-images\1580649338658.pn
+
+![1580649609828](C:\Users\liuxuechao\AppData\Roaming\Typora\typora-user-images\1580649609828.png)
+
+
+
+KL散度，评估两个分布之间的差异度有多高
+
+![1580650609624](C:\Users\liuxuechao\AppData\Roaming\Typora\typora-user-images\1580650609624.png)
+
+#### 训练方法的数学化
+
+同时训练
+
+为D找最高点
+
+为G找最高点中的最低点
+
+![1580652398381](C:\Users\liuxuechao\AppData\Roaming\Typora\typora-user-images\1580652398381.png)
+
+![1580654273846](C:\Users\liuxuechao\AppData\Roaming\Typora\typora-user-images\1580654273846.png)
+
+![1580654403597](C:\Users\liuxuechao\AppData\Roaming\Typora\typora-user-images\1580654403597.png)
+
+![1580654681464](C:\Users\liuxuechao\AppData\Roaming\Typora\typora-user-images\1580654681464.png)
+
+![1580654878074](C:\Users\liuxuechao\AppData\Roaming\Typora\typora-user-images\1580654878074.png)
+
+![1580655744119](C:\Users\liuxuechao\AppData\Roaming\Typora\typora-user-images\1580655744119.png)
+
+##### V
+
+分辨能力，将V调整大，就是将损失函数调小
+
+##### 优化
+
+![1580656304963](C:\Users\liuxuechao\AppData\Roaming\Typora\typora-user-images\1580656304963.png)
+
+#### 评估标准
+
+discrimination不可直接通过loss判断，依赖于generator情况
+
+![1580656804569](C:\Users\liuxuechao\AppData\Roaming\Typora\typora-user-images\1580656804569.png)
+
+催生了多版本的Gan
+
+##### 图片模糊
+
+由于MSE取了多张图片的Min为了取到均值最小
+
+##### 问题
+
+generator更倾向于走向自己有利的方面，不能反映真实世界的多态
+
+### conditional GAN
+
+![1580657650622](C:\Users\liuxuechao\AppData\Roaming\Typora\typora-user-images\1580657650622.png)
+
+#### generator
+
+![1580699806226](C:\Users\liuxuechao\AppData\Roaming\Typora\typora-user-images\1580699806226.png)
+
+##### 应用
+
+图像/文档产生
+
+视频预测
+
+图像精度转换
+
+#### discriminator
+
+![1580699777831](C:\Users\liuxuechao\AppData\Roaming\Typora\typora-user-images\1580699777831.png)
+
+# 2.6
+
+## 二分分类
+
+### 图像数字化
+
+像素点，三个矩阵
+
+![1580893198585](C:\Users\liuxuechao\AppData\Roaming\Typora\typora-user-images\1580893198585.png)
+
+### 输入输出
+
+![1580893222868](C:\Users\liuxuechao\AppData\Roaming\Typora\typora-user-images\1580893222868.png)
+
+## 逻辑回归(small NN)
+
+### sigmoid function
+
+![1580908407847](C:\Users\liuxuechao\AppData\Roaming\Typora\typora-user-images\1580908407847.png)
+
+### b/偏置量
+
+### 优化逻辑回归的代价函数
+
+loss function=1/2(yhat-y)^2
+
+实际上L=-(ylogy*hat*+(1-y)log(1-y*hat*))  //界定模型对单一样本的训练效果
+
+cost function   //衡量w,b在模型中的效果
+
+![1580975947788](C:\Users\liuxuechao\AppData\Roaming\Typora\typora-user-images\1580975947788.png)
+
+### 梯度下降(gradient descent)
+
+以初始点开始，朝最陡的下坡方向走一步
+
+![1580976721407](C:\Users\liuxuechao\AppData\Roaming\Typora\typora-user-images\1580976721407.png)
+
+![1580977687232](C:\Users\liuxuechao\AppData\Roaming\Typora\typora-user-images\1580977687232.png)
+
+代码实现
+
+w=w-a*dw
+
+# 2.7
+
+## computation graph
+
+从左向右的计算
+
+### 导数
+
+链式
+
+# 2.9-2.10
+
+反向传播的最后一步
+
+是利用微积分的知识，算出你需要改变w,b多少
+
+![](C:\Users\liuxuechao\AppData\Roaming\Typora\typora-user-images\1581237837236.png)
+
+m examples
+
+![1581248395742](C:\Users\liuxuechao\AppData\Roaming\Typora\typora-user-images\1581248395742.png)
+
+![1581248782610](C:\Users\liuxuechao\AppData\Roaming\Typora\typora-user-images\1581248782610.png)
+
+存在for循环降低效率的问题
+
+所以产生矢量化方法
+
+### 向量化/vectorization
+
