@@ -1,3 +1,5 @@
+
+
 ##  基本配置 
 
 测试代码
@@ -17,7 +19,9 @@
 
  第一个简单测试用例通过（其中存在CPU support问题 忽略/优化） 
 
-# 2.24框架函数研究
+# CNN框架函数研究https://tensorflow.google.cn/tutorials/images/cnn
+
+###### 模型建立
 
 ```python
 from __future__ import absolute_import, division, print_function, unicode_literals
@@ -61,7 +65,23 @@ model.add(layers.MaxPooling2D((2, 2)))
 model.add(layers.Conv2D(64, (3, 3), activation='relu'))
 ```
 
+###### 编译训练模型
 
+```
+model.compile()
+```
+
+其中参数包括：优化函数
+
+loss
+
+metrics: 列表，包含评估模型在训练和测试时的性能的指标，典型用法是metrics=[‘accuracy’]。如果要在多输出模型中为不同的输出指定不同的指标，可向该参数传递一个字典，例如metrics={‘output_a’: ‘accuracy’}。评价函数,与损失函数类似,只不过评价函数的结果不会用于训练过程中,可以传递已有的评价函数名称,或者传递一个自定义的theano/tensorflow函数来使用
+
+```python
+model.fit()
+```
+
+https://blog.csdn.net/a1111h/article/details/82148497参数问题
 
 # 2.1学习笔记
 
