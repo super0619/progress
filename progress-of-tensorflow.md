@@ -1,3 +1,11 @@
+# IDEAS
+
+1.预训练
+
+2.cycleGAN
+
+# RNN
+
 
 
 ##  基本配置 
@@ -82,6 +90,16 @@ model.fit()
 ```
 
 https://blog.csdn.net/a1111h/article/details/82148497参数问题
+
+###### 评估模型
+
+```python
+plt.plot()
+```
+
+https://blog.csdn.net/Chenzhoiku/article/details/62889490
+
+plt库
 
 # 2.1学习笔记
 
