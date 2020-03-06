@@ -1,12 +1,261 @@
+![1583488092371](C:\Users\liuxuechao\AppData\Roaming\Typora\typora-user-images\1583488092371.png)
+
+a）序贯模型（Sequential):单输入单输出，一条路通到底，层与层之间只有相邻关系，没有跨层连接。这种模型编译速度快，操作也比较简单
+
+b）函数式模型（Model）：多输入多输出，层与层之间任意连接。这种模型编译速度慢。
+
+-----------------------------------------------------------------------------------------------------------------------------------------------------------输入向量是784维度的，第一个影藏层是1000个节点，init代表的是链接矩阵中的权值初始化
+
+'''
+
+init 初始化参数:
+
+uniform(scale=0.05) :均匀分布，最常用的。Scale就是均匀分布的每个数据在-scale~scale之间。此处就是-0.05~0.05。scale默认值是0.05；
+
+lecun_uniform:是在LeCun在98年发表的论文中基于uniform的一种方法。区别就是lecun_uniform的scale=sqrt(3/f_in)。f_in就是待初始化权值矩阵的行。
+
+normal：正态分布（高斯分布）。
+
+identity ：用于2维方阵，返回一个单位阵
+
+orthogonal：用于2维方阵，返回一个正交矩阵。
+
+zero：产生一个全0矩阵。
+
+glorot_normal：基于normal分布，normal的默认 sigma^2=scale=0.05，而此处sigma^2=scale=sqrt(2 / (f_in+ f_out))，其中，f_in和f_out是待初始化矩阵的行和列。
+
+glorot_uniform：基于uniform分布，uniform的默认scale=0.05，而此处scale=sqrt( 6 / (f_in +f_out)) ，其中，f_in和f_out是待初始化矩阵的行和列。
+
+he_normal：基于normal分布，normal的默认 scale=0.05，而此处scale=sqrt(2 / f_in)，其中，f_in是待初始化矩阵的行。
+
+he_uniform：基于uniform分布，uniform的默认scale=0.05，而此处scale=sqrt( 6 / f_in)，其中，f_in待初始化矩阵的行。
+
+设定参数
+
+lr表示学习速率，decay是学习速率的衰减系数(每个epoch衰减一次)，momentum表示动量项，Nesterov的值是False或者True，表示使不使用Nesterov momentum。
+
+sgd = SGD(lr=0.01, decay=1e-6, momentum=0.9,nesterov=True)
+
+loss代表的是损失函数, optimizer代表的是优化方法, class_mode代表
+
+使用交叉熵作为loss函数，就是熟知的log损失函数
+
+model.compile(loss='categorical_crossentropy',optimizer=sgd, class_mode='categorical')
+
+![1583501724678](C:\Users\liuxuechao\AppData\Roaming\Typora\typora-user-images\1583501724678.png)
+
+开始训练，这里参数比较多。batch_size就是batch_size，nb_epoch就是最多迭代的次数， shuffle就是是否把数据随机打乱之后再进行训练
+
+verbose是屏显模式，官方这么说的：verbose: 0 for no logging to stdout, 1 for progress bar logging, 2 for one log line per epoch.
+
+就是说0是不屏显，1是显示一个进度条，2是每个epoch都显示一行数据
+
+show_accuracy就是显示每次迭代后的正确率
+
+validation_split就是拿出百分之多少用来做交叉验证
+
+```python
+
+from keras.models import Sequential  
+
+from keras.layers.core import Dense, Dropout, Activation  
+
+from keras.optimizers import SGD  
+
+from keras.datasets import mnist  
+
+import numpy 
+
+'''
+
+    第一步：选择模型
+
+'''
+
+model = Sequential()
+
+'''
+
+   第二步：构建网络层
+
+'''
+
+model.add(Dense(500,input_shape=(784,))) # 输入层，28*28=784  
+
+model.add(Activation('tanh')) # 激活函数是tanh  
+
+model.add(Dropout(0.5)) # 采用50%的dropout
+
+ 
+
+model.add(Dense(500)) # 隐藏层节点500个  
+
+model.add(Activation('tanh'))  
+
+model.add(Dropout(0.5))
+
+ 
+
+model.add(Dense(10)) # 输出结果是10个类别，所以维度是10  
+
+model.add(Activation('softmax')) # 最后一层用softmax作为激活函数
+
+ 
+
+'''
+
+   第三步：编译
+
+'''
+
+sgd = SGD(lr=0.01, decay=1e-6, momentum=0.9, nesterov=True) # 优化函数，设定学习率（lr）等参数  
+
+model.compile(loss='categorical_crossentropy', optimizer=sgd, class_mode='categorical') # 使用交叉熵作为loss函数
+
+ 
+
+'''
+
+   第四步：训练
+
+   .fit的一些参数
+
+   batch_size：对总的样本数进行分组，每组包含的样本数量
+
+   epochs ：训练次数
+
+   shuffle：是否把数据随机打乱之后再进行训练
+
+   validation_split：拿出百分之多少用来做交叉验证
+
+   verbose：屏显模式 0：不输出  1：输出进度  2：输出每次的训练结果
+
+'''
+
+(X_train, y_train), (X_test, y_test) = mnist.load_data() # 使用Keras自带的mnist工具读取数据（第一次需要联网）
+
+# 由于mist的输入数据维度是(num, 28, 28)，这里需要把后面的维度直接拼起来变成784维  
+
+X_train = X_train.reshape(X_train.shape[0], X_train.shape[1] * X_train.shape[2]) 
+
+X_test = X_test.reshape(X_test.shape[0], X_test.shape[1] * X_test.shape[2])  
+
+Y_train = (numpy.arange(10) == y_train[:, None]).astype(int) 
+
+Y_test = (numpy.arange(10) == y_test[:, None]).astype(int)
+
+ 
+
+model.fit(X_train,Y_train,batch_size=200,epochs=50,shuffle=True,verbose=0,validation_split=0.3)
+
+model.evaluate(X_test, Y_test, batch_size=200, verbose=0)
+
+ 
+
+'''
+
+    第五步：输出
+
+'''
+
+print("test set")
+
+scores = model.evaluate(X_test,Y_test,batch_size=200,verbose=0)
+
+print("")
+
+print("The test loss is %f" % scores)
+
+result = model.predict(X_test,batch_size=200,verbose=0)
+
+ 
+
+result_max = numpy.argmax(result, axis = 1)
+
+test_max = numpy.argmax(Y_test, axis = 1)
+
+ 
+
+result_bool = numpy.equal(result_max, test_max)
+
+true_num = numpy.sum(result_bool)
+
+print("")
+
+print("The accuracy of the model is %f" % (true_num/len(result_bool)))
+
+```
+
+(https://blog.csdn.net/zjw642337320/article/details/81204560)
+
 # IDEAS
 
-1.预训练
+1.预训练 对于多节点和深网络比较有用（基本被淘汰）
 
 2.cycleGAN
 
+https://tensorflow.google.cn/guide/keras/rnn#bidirectional_rnns
+
+3.![1583506381956](C:\Users\liuxuechao\AppData\Roaming\Typora\typora-user-images\1583506381956.png)
+
 # RNN
 
+### /*关于词嵌入：编码Word embeddings
 
+#### One-hot encodings
+
+#### Encode each word with a unique number
+
+#### Word embeddings（词嵌入）
+
+ 一种使用高效密集表示的方式，其中相似的词具有相似的编码。重要的是，我们不必手动指定此编码。嵌入是浮点值的密集向量（向量的长度是您指定的参数）。它们不是可手动指定嵌入值的值，而是可训练的参数（模型在训练过程中学习的权重，就像模型学习密集层的权重一样）。 
+
+![1583486011613](C:\Users\liuxuechao\AppData\Roaming\Typora\typora-user-images\1583486011613.png)
+
+![1583486045320](C:\Users\liuxuechao\AppData\Roaming\Typora\typora-user-images\1583486045320.png)
+
+https://blog.csdn.net/weixin_43763859/article/details/101716743?depth_1-utm_source=distribute.pc_relevant.none-task&utm_source=distribute.pc_relevant.none-task （tfds.builder tfds.load)
+
+![1583486964407](C:\Users\liuxuechao\AppData\Roaming\Typora\typora-user-images\1583486964407.png)
+
+![1583504873083](C:\Users\liuxuechao\AppData\Roaming\Typora\typora-user-images\1583504873083.png)
+
+![1583505002944](C:\Users\liuxuechao\AppData\Roaming\Typora\typora-user-images\1583505002944.png)
+
+## */
+
+RNN基本设定https://tensorflow.google.cn/guide/keras/rnn
+
+```python
+from __future__ import absolute_import, division, print_function, unicode_literals
+import collections
+import matplotlib.pyplot as plt
+import numpy as np
+import tensorflow as tf
+from tensorflow.keras import layers
+```
+
+![1583487948865](C:\Users\liuxuechao\AppData\Roaming\Typora\typora-user-images\1583487948865.png)
+
+https://tensorflow.google.cn/api_docs/python/tf/keras/layers (layers模组)
+
+![1583504701677](C:\Users\liuxuechao\AppData\Roaming\Typora\typora-user-images\1583504701677.png)
+
+embedding层
+
+参数：
+
+![1583505084161](C:\Users\liuxuechao\AppData\Roaming\Typora\typora-user-images\1583505084161.png)
+
+![1583505536863](C:\Users\liuxuechao\AppData\Roaming\Typora\typora-user-images\1583505536863.png)
+
+dense层可以做加减与0比较，and or，以及乘法（https://blog.csdn.net/weixin_39862845/article/details/79275671）
+
+LSTM（http://blog.sina.com.cn/s/blog_b9899d9f01031i5j.html）输出维度就是并行处理单元的数量
+
+Keras中使用LSTM，只需指定LSTM 层的输出维度，其他所有参数（有很多）都使用 Keras 默认值。Keras 具有很好的默认值，无须手动调参，模型通常也能正常运行。
+
+![1583507066920](C:\Users\liuxuechao\AppData\Roaming\Typora\typora-user-images\1583507066920.png)
 
 ##  基本配置 
 
