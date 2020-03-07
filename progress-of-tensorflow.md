@@ -202,6 +202,8 @@ https://tensorflow.google.cn/guide/keras/rnn#bidirectional_rnns
 
 3.![1583506381956](C:\Users\liuxuechao\AppData\Roaming\Typora\typora-user-images\1583506381956.png)
 
+4.协作式
+
 # RNN
 
 ### /*关于词嵌入：编码Word embeddings
