@@ -188,11 +188,15 @@ print("The accuracy of the model is %f" % (true_num/len(result_bool)))
 
 (https://blog.csdn.net/zjw642337320/article/details/81204560)
 
+![1583549393942](C:\Users\liuxuechao\AppData\Roaming\Typora\typora-user-images\1583549393942.png)
+
 # IDEAS
 
 1.预训练 对于多节点和深网络比较有用（基本被淘汰）
 
 2.cycleGAN
+
+
 
 https://tensorflow.google.cn/guide/keras/rnn#bidirectional_rnns
 
@@ -349,6 +353,10 @@ plt.plot()
 https://blog.csdn.net/Chenzhoiku/article/details/62889490
 
 plt库
+
+# DCGAN
+
+
 
 # 2.1学习笔记
 

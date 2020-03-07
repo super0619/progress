@@ -653,3 +653,6 @@ m examples
 
 ### 向量化/vectorization
 
+## GAN
+
+![1583546958032](C:\Users\liuxuechao\AppData\Roaming\Typora\typora-user-images\1583546958032.png)
