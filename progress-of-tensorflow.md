@@ -210,6 +210,14 @@ https://tensorflow.google.cn/guide/keras/rnn#bidirectional_rnns
 
 #### One-hot encodings
 
+将csv文件中的文字转化成数据
+
+https://blog.csdn.net/mewbing/article/details/83653637?depth_1-utm_source=distribute.pc_relevant.none-task&utm_source=distribute.pc_relevant.none-task
+
+![1583919116224](C:\Users\liuxuechao\AppData\Roaming\Typora\typora-user-images\1583919116224.png)
+
+Q：转化为列之后会不会产生与其价值不相符的影响，
+
 #### Encode each word with a unique number
 
 #### Word embeddings（词嵌入）
