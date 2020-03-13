@@ -703,5 +703,13 @@ Epoch 10/10
 
 # 
 
+# csv数据处理
+
+数据预处理：
+
+所有的特征都是用一个热编码数字的。对这些特征进行缩放以避免具有可能在结果中权重过大的值的特征。
+用决策树对数据集KDD做分析
+https://github.com/CynthiaKoopman/Network-Intrusion-Detection/blob/master/DecisionTree_IDS.ipynb
+
 
 
