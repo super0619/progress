@@ -711,5 +711,45 @@ Epoch 10/10
 用决策树对数据集KDD做分析
 https://github.com/CynthiaKoopman/Network-Intrusion-Detection/blob/master/DecisionTree_IDS.ipynb
 
+```python
+df_test = pd.read_csv("KDDTest+_2.csv", header=None, names = col_names)
+#文件如果没有放在同一个文件夹之下，需要加全路径
+#header为指定的行作为表头
+#指定表头
+```
 
+
+
+```python
+df.describe()
+#未出结果
+```
+
+```python
+print(df['label'].value_counts())
+#value_counts()函数 
+#value_counts函数用于统计dataframe或series中不同数或字符串出现的次数
+#ascending=True时,按升序排列.
+#normalize=True时,可计算出不同字符出现的频率,画柱状图统计时可以用到.
+```
+
+​	one-hot
+
+因此，首先需要使用LabelEncoder转换特性，将每个类别转换为一个数字。
+
+“这个转换器的输入应该是一个整数矩阵，表示类别（离散）特征所接受的值。输出将是一个稀疏矩阵，其中每列对应一个特征的一个可能值。假设输入特征的值在[0，n_值]范围内
+
+```python
+print('Training set:')
+for col_name in df.columns:
+    if df[col_name].dtypes == 'object' :
+#.dtypes:数据类型
+        unique_cat = len(df[col_name].unique()) #.unique去掉重复值
+        print("Feature '{col_name}' has {unique_cat} categories".format(col_name=col_name, unique_cat=unique_cat))
+
+#see how distributed the feature service is, it is evenly distributed and therefore we need to make dummies for all.
+print()
+print('Distribution of categories in service:')
+print(df['service'].value_counts().sort_values(ascending=False).head())
+```
 
