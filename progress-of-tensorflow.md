@@ -1,3 +1,13 @@
+在VS CODE里面编辑
+
+复制到工作区所在的文件夹
+
+![1584177572473](C:\Users\liuxuechao\AppData\Roaming\Typora\typora-user-images\1584177572473.png)
+
+然后在tensorflow打开
+
+![1584177622247](C:\Users\liuxuechao\AppData\Roaming\Typora\typora-user-images\1584177622247.png)
+
 ![1583488092371](C:\Users\liuxuechao\AppData\Roaming\Typora\typora-user-images\1583488092371.png)
 
 a）序贯模型（Sequential):单输入单输出，一条路通到底，层与层之间只有相邻关系，没有跨层连接。这种模型编译速度快，操作也比较简单
@@ -752,4 +762,8 @@ print()
 print('Distribution of categories in service:')
 print(df['service'].value_counts().sort_values(ascending=False).head())
 ```
+
+# 可调参数
+
+1.图片形状
 
