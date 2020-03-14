@@ -767,3 +767,37 @@ print(df['service'].value_counts().sort_values(ascending=False).head())
 
 1.图片形状
 
+# 第三周工作
+
+0，已完成：CNN实现二分类                      #（个人问题:数据处理过程代码不是很清楚）**必须清楚！**
+
+1.接下来工作目标：
+
+​    0.CNN调参
+
+​    1.多分类的实现，（标签改，输出）
+
+​     2.利用生成器产生样本
+
+# DCGAN
+
+```python
+# Batch and shuffle the data
+train_dataset = tf.data.Dataset.from_tensor_slices #他的所用是切分传入的 Tensor 的第一个维度，生成相应的 dataset 。
+(train_images).shuffle(BUFFER_SIZE).batch(BATCH_SIZE)
+```
+
+![1584195556821](C:\Users\liuxuechao\AppData\Roaming\Typora\typora-user-images\1584195556821.png)
+
+有一个`shuffle`方法，用来打乱数据集中数据顺序，训练时非常常用。
+
+shuffle是防止数据过拟合的重要手段，
+
+Batch Size定义：一次训练所选取的样本数。
+
+1、没有Batch Size，梯度准确，只适用于小样本数据库 
+2、Batch Size=1，梯度变来变去，非常不准确，网络很难收敛。 
+3、Batch Size增大，梯度变准确， 
+4、Batch Size增大，梯度已经非常准确，再增加Batch Size也没有用
+
+注意：Batch Size增大了，要到达相同的准确度，必须要增大epoch。
