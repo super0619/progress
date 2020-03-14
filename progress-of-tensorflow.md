@@ -801,3 +801,5 @@ Batch Size定义：一次训练所选取的样本数。
 4、Batch Size增大，梯度已经非常准确，再增加Batch Size也没有用
 
 注意：Batch Size增大了，要到达相同的准确度，必须要增大epoch。
+
+
