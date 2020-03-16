@@ -773,9 +773,9 @@ print(df['service'].value_counts().sort_values(ascending=False).head())
 
 1.接下来工作目标：
 
-​    0.CNN调参
+​    0.CNN调参（重点调数据量比较少的的结构，以用于生成器配合）
 
-​    1.多分类的实现，（标签改，输出）
+​    ######1.多分类的实现，（标签改，输出）
 
 ​     2.利用生成器产生样本
 
@@ -802,4 +802,34 @@ Batch Size定义：一次训练所选取的样本数。
 
 注意：Batch Size增大了，要到达相同的准确度，必须要增大epoch。
 
+```python
+train_images = train_images.reshape(train_images.shape[0], 28, 28, 1).astype('float32')
+train_images = (train_images - 127.5) / 127.5 # Normalize the images to [-1, 1]
+```
 
+![1584372201797](C:\Users\liuxuechao\AppData\Roaming\Typora\typora-user-images\1584372201797.png)
+
+![1584372362280](C:\Users\liuxuechao\AppData\Roaming\Typora\typora-user-images\1584372362280.png)
+
+```python
+(layers.Dense
+```
+
+inputs：输入该网络层的数据
+
+units：输出的维度大小，改变inputs的最后一维
+
+activation：激活函数，即神经网络的非线性变化
+
+use_bias：使用bias为True（默认使用），不用bias改成False即可，是否使用偏置项
+
+trainable=True:表明该层的参数是否参与训练。如果为真则变量加入到图集合中
+![1584375108006](C:\Users\liuxuechao\AppData\Roaming\Typora\typora-user-images\1584375108006.png)
+
+https://blog.csdn.net/theonegis/article/details/80115340
+
+![1584375388329](C:\Users\liuxuechao\AppData\Roaming\Typora\typora-user-images\1584375388329.png)
+
+batchnormalization
+
+ https://zhuanlan.zhihu.com/p/113233908 
