@@ -833,3 +833,19 @@ https://blog.csdn.net/theonegis/article/details/80115340
 batchnormalization
 
  https://zhuanlan.zhihu.com/p/113233908 
+
+# 多分类之数据处理
+
+![1584428379562](C:\Users\liuxuechao\AppData\Roaming\Typora\typora-user-images\1584428379562.png)
+
+![1584434156163](C:\Users\liuxuechao\AppData\Roaming\Typora\typora-user-images\1584434156163.png)
+
+#### 问题
+
+1.添加缺失的几行时打乱了顺序，应该加到对应的位置
+
+2.conda安装sklearn 用conda install scikit-learn
+
+3.numpy和tensor之间转化
+
+https://blog.csdn.net/weixin_44473755/article/details/102939703
