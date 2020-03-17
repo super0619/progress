@@ -849,3 +849,7 @@ batchnormalization
 3.numpy和tensor之间转化
 
 https://blog.csdn.net/weixin_44473755/article/details/102939703
+
+### 后续处理
+
+准确率0.78
