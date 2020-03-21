@@ -836,6 +836,14 @@ batchnormalization
 
 # 多分类之数据处理
 
+dropout
+
+![1584778780494](C:\Users\liuxuechao\AppData\Roaming\Typora\typora-user-images\1584778780494.png)
+
+![1584776987823](C:\Users\liuxuechao\AppData\Roaming\Typora\typora-user-images\1584776987823.png)
+
+![1584777034260](C:\Users\liuxuechao\AppData\Roaming\Typora\typora-user-images\1584777034260.png)
+
 ![1584428379562](C:\Users\liuxuechao\AppData\Roaming\Typora\typora-user-images\1584428379562.png)
 
 ![1584434156163](C:\Users\liuxuechao\AppData\Roaming\Typora\typora-user-images\1584434156163.png)
@@ -843,6 +851,10 @@ batchnormalization
 #### 问题
 
 1.添加缺失的几行时打乱了顺序，应该加到对应的位置
+
+法一
+
+![1584777853761](C:\Users\liuxuechao\AppData\Roaming\Typora\typora-user-images\1584777853761.png)
 
 2.conda安装sklearn 用conda install scikit-learn
 
@@ -853,3 +865,50 @@ https://blog.csdn.net/weixin_44473755/article/details/102939703
 ### 后续处理
 
 准确率0.78
+
+1.样本平均化
+
+2.换模型
+
+3.换数据集
+
+1.比例关系是好的影响还是坏的？
+
+问名字
+
+
+
+### 处理过程
+
+0.换上了学长的模型
+
+处理效率在72%
+
+##### 1.换模型CNN+LSTM
+
+https://www.codercto.com/a/58924.html
+
+2.卷积核变成3*3
+
+![1584782907239](C:\Users\liuxuechao\AppData\Roaming\Typora\typora-user-images\1584782907239.png)
+
+
+
+3.独热码不参与标准化
+
+4.每次输入的时候打散
+
+![1584788607731](C:\Users\liuxuechao\AppData\Roaming\Typora\typora-user-images\1584788607731.png)
+
+![1584788809095](C:\Users\liuxuechao\AppData\Roaming\Typora\typora-user-images\1584788809095.png)
+
+数据流作为输入28*28
+
+![1584796076462](C:\Users\liuxuechao\AppData\Roaming\Typora\typora-user-images\1584796076462.png)
+
+![1584789373373](C:\Users\liuxuechao\AppData\Roaming\Typora\typora-user-images\1584789373373.png)
+
++独热码的问题
+
+三分类
+
